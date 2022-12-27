@@ -1,0 +1,11 @@
+<section class="manager">
+  <h1>MANAGER EMPLOYEES LIST</h1>
+  <button ng-click="getEmployees()">Get Employees</button>
+  <div class="emp-list">
+    <emp-card
+      ng-repeat="emp in employees"
+      employee="emp"
+      ng-click="handleCardClick()"
+    ></emp-card>
+  </div>
+</section>

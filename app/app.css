@@ -1,0 +1,125 @@
+/* app css stylesheet */
+:root {
+  --roundedMedium: 7px;
+  --black: #000;
+  --white: #fff;
+  --dark-color: #202023;
+  --light-color: #f0e7db;
+  --secondary-color: #ffffff5c;
+  --section-x-padding: 2rem;
+  --text-accent-color: #319795;
+  --text-secondary-color: #805ad5;
+  overflow-y: auto;
+  overflow-x: hidden;
+  --danger: #fd8a8a;
+  --success: linear-gradient(to right, #00b09b, #96c93d);
+}
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+.done {
+  text-decoration: underline;
+  font-weight: bold;
+}
+.todo-item {
+  cursor: pointer;
+}
+.emp-card {
+  width: 15rem;
+  display: block;
+
+  /* height: 18rem; */
+  min-height: fit-content;
+  border-radius: var(--roundedMedium);
+  padding: 0.5rem;
+  margin: 1rem 0.5rem;
+  cursor: pointer;
+
+  background: #b3ffab; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #b3ffab,
+    #12fff7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #b3ffab, #12fff7);
+  box-shadow: 1px 1px 10px -5px var(--black);
+  position: relative;
+}
+.emp-card:hover {
+  border-color: #805ad5;
+}
+.emp-ava {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--roundedMedium);
+  overflow: hidden;
+}
+.emp-no {
+  padding: 0.35rem;
+  border-radius: var(--roundedMedium);
+  background-color: var(--danger);
+  width: fit-content;
+  position: absolute;
+  /* top: 0; */
+  /* left: 0; */
+  /* transform: translate(0, -50%); */
+  color: var(--white);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.emp-name {
+  text-align: center;
+  margin: 0.75rem auto;
+  font-size: 1.5rem;
+}
+h3 {
+  margin: 0;
+  font-weight: normal;
+}
+.emp-salary,
+.emp-age {
+  text-align: center;
+}
+.emp-list {
+}
+.emp-list {
+  --f-columns: 4;
+  --f-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--f-gap));
+  margin-bottom: calc(-1 * var(--f-gap));
+}
+.emp-list > * {
+  margin-left: var(--f-gap);
+  margin-bottom: var(--f-gap);
+  width: calc((100% / var(--f-columns) - var(--f-gap)));
+}

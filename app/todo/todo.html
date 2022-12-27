@@ -1,0 +1,18 @@
+<div class="app" ng-app="main" ng-controller="MainController as main">
+  <form action="">
+    <input type="text" ng-model="main.inputValue" />
+    <button ng-click="main.addTodo($event)">Add</button>
+  </form>
+  <div class="todo-list">
+    <ul>
+      <li
+        ng-repeat="todo in todoList"
+        class="todo-item"
+        ng-click="toggleDone(todo)"
+      >
+        <span ng-class="{done : todo.isDone}"> {{todo.content}} </span>
+        <button ng-click="main.removeTodo(todo)">X</button>
+      </li>
+    </ul>
+  </div>
+</div>
