@@ -1,0 +1,38 @@
+<form class="form-create-emp" ng-submit="handleSubmit(event)">
+  <div class="text-field">
+    <label for=""></label>
+    <input
+      type="text"
+      placeholder="Name"
+      name="employee_name"
+      ng-model="empInfo.employee_name"
+    />
+  </div>
+  <div class="text-field">
+    <label for=""></label>
+    <input
+      type="number"
+      placeholder="Age"
+      name="age"
+      ng-model="empInfo.employee_age"
+    />
+  </div>
+  <div class="text-field">
+    <label for=""></label>
+    <input
+      type="number"
+      placeholder="Salary"
+      name="employee_salary"
+      ng-model="empInfo.employee_salary"
+    />
+  </div>
+  <div class="text-field">
+    <label for=""></label>
+    <input type="file" />
+  </div>
+
+  <div class="buttons">
+    <button class="save-btn primary-button" type="submit">Save</button>
+    <button class="cancel-btn primary-button">Cancel</button>
+  </div>
+</form>

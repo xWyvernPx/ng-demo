@@ -1,0 +1,17 @@
+<div class="modal-wrapper">
+  <div class="modal-main">
+    <div class="close-btn-wrapper">
+      <button class="close-btn" type="button" ng-click="handleCloseClick()">
+        <i class="ti ti-x"></i>
+      </button>
+    </div>
+    <!-- forms here -->
+    <!-- <span aria-placeholder="modalName">{{modalName}}</span> -->
+    <div class="modal-content">
+      <modal-create-emp ng-if="modalName == 'create-emp'"></modal-create-emp>
+      <modal-update-emp ng-if="modalName == 'update-emp'"></modal-update-emp>
+    </div>
+    <!-- <h1>MODAL DEMO</h1> -->
+  </div>
+  <div class="modal-backdrop"></div>
+</div>

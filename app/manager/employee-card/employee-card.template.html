@@ -1,4 +1,4 @@
-<a class="emp-card" href="{{'/#!/manager/emp/'+$ctrl.employee.id}}">
+<div class="emp-card" href="{{'/#!/manager/emp/'+$ctrl.employee.id}}">
   <span class="emp-no">#{{$ctrl.employee.id}}</span>
   <div class="emp-ava">
     <img src="https://source.unsplash.com/random" alt="" />
@@ -6,4 +6,21 @@
   <h1 class="emp-name">{{$ctrl.employee.employee_name}}</h1>
   <h3 class="emp-salary">Salary - {{$ctrl.employee.employee_salary}}</h3>
   <h3 class="emp-age">Age - {{$ctrl.employee.employee_age}}</h3>
-</a>
+
+  <div class="card-buttons">
+    <button
+      type="button"
+      class="button primary"
+      ng-click="handleUpdateEmployee($event)"
+    >
+      Update
+    </button>
+    <button
+      type="button"
+      class="button danger"
+      ng-click="handleDeleteEmployee($event,$ctrl.employee.id)"
+    >
+      Delete
+    </button>
+  </div>
+</div>
