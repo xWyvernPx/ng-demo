@@ -6,11 +6,11 @@ angular
     function ($routeProvider) {
       $routeProvider.when("/todo", {
         templateUrl: "todo/todo.html",
-        controller: "MainController",
+        controller: "TodoController",
       });
     },
   ])
-  .controller("MainController", [
+  .controller("TodoController", [
     "$scope",
     "todoManager",
     function MainController($scope, todoManager) {

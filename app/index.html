@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en" ng-app="myApp" class="no-js">
+<html lang="en" ng-app="myApp" ng-controller="MainController" class="no-js">
   <!--<![endif]-->
   <head>
     <meta charset="utf-8" />
@@ -20,6 +20,13 @@
     <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css" />
     <link rel="stylesheet" href="app.css" />
     <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/1.35.0/iconfont/tabler-icons.min.css"
+      integrity="sha512-tpsEzNMLQS7w9imFSjbEOHdZav3/aObSESAL1y5jyJDoICFF2YwEdAHOPdOr1t+h8hTzar0flphxR76pd0V1zQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="todo/todo.js"></script>
     <script src="todo/todo.service.js"></script>
     <script src="manager/manager.module.js"></script>
@@ -29,14 +36,25 @@
     <script src="manager/employees/employee.serice.js"></script>
     <script src="manager/employee-card/employee-card.module.js"></script>
     <script src="manager/employee-card/employee-card.component.js"></script>
+    <!-- <script src="modal/modal.module.js"></script> -->
+    <script src="modal/modal.directive.js"></script>
+    <script src="modal/modal.component.js"></script>
+    <script src="modal/modal-create-emp/modal-create-emp.component.js"></script>
+    <script src="modal/modal-update-emp/modal-update-emp.component.js"></script>
+    <script src="confirm-box/confirm-box.component.js"></script>
+    <script src="loading/loading.component.js"></script>
+    <script src="image-upload/image-upload.service.js"></script>
   </head>
   <body>
-    <ul class="menu">
-      <li><a href="#!/view1">view1</a></li>
-      <li><a href="#!/view2">view2</a></li>
-      <li><a href="#!/todo">TODO</a></li>
-      <li><a href="#!/manager">Manager</a></li>
-    </ul>
+    <header>
+      <ul class="menu">
+        <li><a href="#!/view1">view1</a></li>
+        <li><a href="#!/view2">view2</a></li>
+        <li><a href="#!/todo">TODO</a></li>
+        <li><a href="#!/manager">Manager</a></li>
+        <!-- <li><a href="#!/manager">{{modal.isShown}}</a></li> -->
+      </ul>
+    </header>
 
     <!--[if lt IE 7]>
       <p class="browsehappy">
@@ -46,8 +64,11 @@
       </p>
     <![endif]-->
 
+    <!-- <span ng-if="true">Hello</span> -->
+    <loading ng-if="$root.loading.isShown"></loading>
+    <confirm-box ng-if="$root.confirmBox.isShown"></confirm-box>
+    <app-modal ng-if="modal.isShown"> </app-modal>
     <div ng-view></div>
-
     <div>AngularJS seed app: v<span app-version></span></div>
 
     <!-- In production use:
@@ -62,6 +83,9 @@
     <script src="manager/manager.config.js"></script>
     <script src="manager/manager.module.js"></script>
     <script src="manager/manager.controller.js"></script>
+    <!-- <script src="modal/modal.module.js"></script>
+    <script src="modal/modal.component.js"></script>
+    <script src="modal/modal.directive.js"></script> -->
 
     <script src="core/version/version.js"></script>
     <script src="core/version/version-directive.js"></script>
