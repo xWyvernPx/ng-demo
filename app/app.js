@@ -16,6 +16,7 @@ angular
     "app.modal.update-emp",
     "app.confirm-box",
     "app.loading",
+    "app.image-upload",
   ])
   .config([
     "$locationProvider",
@@ -32,7 +33,7 @@ angular
     function ($scope, $rootScope) {
       $rootScope.modal = {
         isShown: true,
-        modalName: "update-emp",
+        modalName: "create-emp",
         modalPayload: {
           id: 1,
           employee_name: "Employ",
@@ -62,6 +63,8 @@ angular
       //   isShown: true,
       //   modalName: "create-emp",
       // };
-      $rootScope.showLoading = true;
+      $rootScope.loading = {
+        isShown: false,
+      };
     },
   ]);

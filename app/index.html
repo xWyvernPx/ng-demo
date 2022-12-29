@@ -43,15 +43,18 @@
     <script src="modal/modal-update-emp/modal-update-emp.component.js"></script>
     <script src="confirm-box/confirm-box.component.js"></script>
     <script src="loading/loading.component.js"></script>
+    <script src="image-upload/image-upload.service.js"></script>
   </head>
   <body>
-    <ul class="menu">
-      <li><a href="#!/view1">view1</a></li>
-      <li><a href="#!/view2">view2</a></li>
-      <li><a href="#!/todo">TODO</a></li>
-      <li><a href="#!/manager">Manager</a></li>
-      <!-- <li><a href="#!/manager">{{modal.isShown}}</a></li> -->
-    </ul>
+    <header>
+      <ul class="menu">
+        <li><a href="#!/view1">view1</a></li>
+        <li><a href="#!/view2">view2</a></li>
+        <li><a href="#!/todo">TODO</a></li>
+        <li><a href="#!/manager">Manager</a></li>
+        <!-- <li><a href="#!/manager">{{modal.isShown}}</a></li> -->
+      </ul>
+    </header>
 
     <!--[if lt IE 7]>
       <p class="browsehappy">
@@ -62,7 +65,7 @@
     <![endif]-->
 
     <!-- <span ng-if="true">Hello</span> -->
-    <loading></loading>
+    <loading ng-if="$root.loading.isShown"></loading>
     <confirm-box ng-if="$root.confirmBox.isShown"></confirm-box>
     <app-modal ng-if="modal.isShown"> </app-modal>
     <div ng-view></div>

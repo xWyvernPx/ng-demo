@@ -1,16 +1,18 @@
 <div class="confirm-box-wrapper">
-  <div class="content">
-    <h1>{{$root.confirmBox.content.heading || "Notice"}}</h1>
-    <div class="">
-      <span>{{$root.confirmBox.content.notice || "Close this Notice"}}</span>
-    </div>
-    <div class="buttons">
-      <button type="button" ng-click="$root.confirmBox.handleOkClick()">
-        OK
-      </button>
-      <button type="button" ng-click="$root.confirmBox.handleCancelClick()">
-        Cancel
-      </button>
+  <div class="confirm-content">
+    <h1 class="warning">{{$root.confirmBox.content.heading || "Notice"}}</h1>
+    <div class="secondary-content">
+      <div class="notice">
+        <span>{{$root.confirmBox.content.notice || "Close this Notice"}}</span>
+      </div>
+      <div class="confirm-buttons">
+        <button type="button" ng-click="$root.confirmBox.handleOkClick()">
+          OK
+        </button>
+        <button type="button" ng-click="$root.confirmBox.handleCancelClick()">
+          Cancel
+        </button>
+      </div>
     </div>
   </div>
   <div class="confirm-box-backdrop"></div>

@@ -27,5 +27,8 @@ angular
           id: $scope.empInfo.id,
         });
       };
+      $scope.handleClose = function () {
+        $rootScope.modal.isShown = false;
+      };
     },
   });

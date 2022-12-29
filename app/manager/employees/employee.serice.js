@@ -1,18 +1,25 @@
 angular.module("employee", []).factory("EmployeeService", [
   "$http",
-  function ($http) {
+  "$rootScope",
+  function ($http, $rootScope) {
     this.getAllEmployees = async () => {
+      $rootScope.loading.isShown = true;
+      console.log($rootScope);
       return $http
         .get("https://dummy.restapiexample.com/api/v1/employees")
         .then((response) => {
+          $rootScope.loading.isShown = false;
           if (response.status === 200) return response?.data?.data;
           return response;
         });
     };
     this.getDetailEmp = async (id) => {
+      $rootScope.loading.isShown = true;
       return $http
         .get("https://dummy.restapiexample.com/api/v1/employees/" + id)
         .then((response) => {
+          $rootScope.loading.isShown = false;
+
           if (response.status === 200) return response?.data?.data;
           return response;
         });
@@ -26,12 +33,16 @@ angular.module("employee", []).factory("EmployeeService", [
          profile_image : string
       }
       */
+      $rootScope.loading.isShown = true;
+
       return $http
         .post(
           "https://dummy.restapiexample.com/api/v1/create",
           JSON.stringify(employee)
         )
         .then((response) => {
+          $rootScope.loading.isShown = false;
+
           if (response.status === 200) return response?.data?.data;
           return response;
         });
@@ -46,20 +57,28 @@ angular.module("employee", []).factory("EmployeeService", [
           profile_image : string
         }
         */
+      $rootScope.loading.isShown = true;
+
       return $http
         .put(
           "https://dummy.restapiexample.com/api/v1/update/" + id,
           JSON.stringify(other)
         )
         .then((response) => {
+          $rootScope.loading.isShown = false;
+
           if (response.status === 200) return response?.data?.data;
           return response;
         });
     };
     this.deleteEmp = async (id) => {
+      $rootScope.loading.isShown = true;
+
       return $http
         .delete("https://dummy.restapiexample.com/api/v1/delete/" + id)
         .then((response) => {
+          $rootScope.loading.isShown = false;
+
           if (response.status === 200) return true;
           return false;
         });
